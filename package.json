@@ -7,7 +7,7 @@
     "npm": ">=5"
   },
   "scripts": {
-    "start": "nodemon server -w server"
+    "start": "nodemon src -w src"
   },
   "author": "morosystems",
   "license": "MIT",
