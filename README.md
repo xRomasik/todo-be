@@ -1,6 +1,8 @@
-Running
+Installation
 -----------------
-`npm start` will start server on `http://localhost:8080`
+- checkout this repository
+- `npm install`
+- `npm start` will start server on `http://localhost:8080`
 
 Interface
 -----------------
