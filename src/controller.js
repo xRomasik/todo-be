@@ -6,11 +6,13 @@ const adapter = new FileSync('data/db.json');
 const db = low(adapter);
 
 exports.getAll = (req, res) => {
-    const posts = db.get('todos')
-        .sortBy('createdDate')
-        .reverse()
-        .value();
-    res.send(posts);
+    setTimeout(() => {
+        const posts = db.get('todos')
+            .sortBy('createdDate')
+            .reverse()
+            .value();
+        res.send(posts);
+    }, 3000);
 };
 
 exports.getCompleted = (req, res) => {

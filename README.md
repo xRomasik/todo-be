@@ -21,7 +21,7 @@ Entities from backend have this shape
 API
 -----------------
  ### GET /todos
- returns all todos
+ returns all todos. Slow service, around 3 seconds.
  
  ### POST /todos
  body `{"text":"..."}`
