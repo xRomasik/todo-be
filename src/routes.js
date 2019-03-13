@@ -8,9 +8,6 @@ module.exports = (app) => {
     app.route('/todos/completed')
         .get(controller.getCompleted);
 
-    app.route('/todos/incompleted')
-        .get(controller.getIncompleted);
-
     app.route('/todos/:id')
         .post(controller.updateText)
         .delete(controller.delete);

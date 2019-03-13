@@ -24,15 +24,6 @@ exports.getCompleted = (req, res) => {
     res.send(posts);
 };
 
-exports.getIncompleted = (req, res) => {
-    const posts = db.get('todos')
-        .filter((item) => !item.completed)
-        .sortBy('createdDate')
-        .reverse()
-        .value();
-    res.send(posts);
-};
-
 exports.create = (req, res) => {
     if (!req.body.text) {
         res.status(422).send('\'text\' field must be present in json');
