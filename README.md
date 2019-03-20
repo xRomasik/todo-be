@@ -30,9 +30,6 @@ API
  
  ### GET /todos/completed
  returns all completed todos
-  
- ### GET /todos/incompleted
- returns all uncompleted todos
  
  ### POST /todos/{id}
  body `{"text":"..."}`
