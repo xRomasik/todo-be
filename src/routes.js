@@ -5,8 +5,8 @@ const controller = require('./controller.js');
  * @property {string} id - Identification
  * @property {string} text - Content
  * @property {boolean} completed - Status
- * @property {number} createdDate - Date when task was created
- * @property {number} completedDate - Date when task was completed
+ * @property {number} createdDate - Date when task was created (Timestamp)
+ * @property {number} completedDate - Date when task was completed (Timestamp)
  */
 
 /**
