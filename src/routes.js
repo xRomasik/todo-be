@@ -2,9 +2,9 @@ const controller = require('./controller.js');
 
 /**
  * @typedef {object} Task
- * @property {string} id - Identification
- * @property {string} text - Content
- * @property {boolean} completed - Status
+ * @property {string} id.required - Identification
+ * @property {string} text.required - Content
+ * @property {boolean} completed.required - Status
  * @property {number} createdDate - Date when task was created (Timestamp)
  * @property {number} completedDate - Date when task was completed (Timestamp)
  */
