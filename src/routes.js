@@ -25,14 +25,14 @@ module.exports = (app) => {
      * GET /tasks
      * @summary Returns all tasks. Slow service, around 3 seconds
      * @tags Tasks
-     * @return {array<Task>} 200 - success response - application/json
+     * @return {array<Task>} 200 - Successful response - application/json
      */
     /**
      * POST /tasks
-     * @summary Creates task with given text then returns it
+     * @summary Creates task with given text, then returns created task
      * @tags Tasks
      * @param {CreateTask} request.body.required - text
-     * @return {Task} 200 - Task created - application/json
+     * @return {Task} 200 - Successful response - application/json
      * @return {string} 422 - Bad request response
      */
     app.route('/tasks')
@@ -43,18 +43,18 @@ module.exports = (app) => {
      * GET /tasks/completed
      * @summary Returns all completed tasks
      * @tags Tasks
-     * @return {array<Task>} 200 - success response - application/json
+     * @return {array<Task>} 200 - Successful response - application/json
      */
     app.route('/tasks/completed')
         .get(controller.getCompleted);
 
     /**
      * POST /tasks/{id}
-     * @summary Updates text of given task
+     * @summary Updates text of given task, then returns modified task
      * @tags Tasks
      * @param {string} id.path.required - ID of task
      * @param {UpdateTask} request.body.required - text
-     * @return {array<Task>} 200 - Task updated - application/json
+     * @return {Task} 200 - Successful response - application/json
      * @return {string} 422 - Bad request
      */
     /**
@@ -62,7 +62,7 @@ module.exports = (app) => {
      * @summary Deletes given task
      * @tags Tasks
      * @param {string} id.path.required - ID of task
-     * @return {array<Task>} 200 - Task deleted - application/json
+     * @return {string} 200 - Successful response
      * @return {string} 422 - Bad request
      * @return {string} 400 - ID of task was not found
      */
@@ -75,7 +75,7 @@ module.exports = (app) => {
      * @summary Completes given task, then returns modified task
      * @tags Tasks
      * @param {string} id.path.required - ID of task
-     * @return {array<Task>} 200 - success response - application/json
+     * @return {Task} 200 - Successful response - application/json
      * @return {string} 422 - Bad request
      * @return {string} 400 - ID of task was not found
      */
@@ -87,7 +87,7 @@ module.exports = (app) => {
      * @summary Incompletes given task, then returns modified task
      * @tags Tasks
      * @param {string} id.path.required - ID of task
-     * @return {array<Task>} 200 - success response - application/json
+     * @return {Task} 200 - Successful response - application/json
      * @return {string} 422 - Bad request
      * @return {string} 400 - ID of task was not found
      */
