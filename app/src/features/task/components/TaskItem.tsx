@@ -8,12 +8,13 @@ import {
 } from "../../../store/tasksSlice";
 import { useToggleTask } from "../hooks/useToggleTask";
 import { useAppSelector } from "../../../store/redux";
+import { memo } from "react";
 
 type TaskItemProps = {
   task: Task;
 };
 
-export const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
+export const TaskItem: React.FC<TaskItemProps> = memo(({ task }) => {
   const [deleteTask] = useDeleteTaskMutation();
   const [updateTask] = useUpdateTaskMutation();
   const toggleTask = useToggleTask(task.completed);
@@ -56,4 +57,4 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
       </div>
     </li>
   );
-};
+})
