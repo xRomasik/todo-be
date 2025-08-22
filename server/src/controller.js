@@ -119,3 +119,31 @@ exports.incomplete = (req, res) => {
     }
 };
 
+exports.completeAll = (req, res) => {
+    const { ids } = req.body;
+    if (!ids || !Array.isArray(ids)) {
+        return res.status(422).send('ids array must be present in json');
+    }
+    
+    const completed = [];
+    ids.forEach(id => {
+        const task = db.get('tasks')
+            .find({ id, completed: false })
+            .assign({
+                completed: true,
+                completedDate: new Date().getTime(),
+            })
+            .write();
+        if (task.id) completed.push(task);
+    });
+    
+    res.send(completed);
+};
+
+exports.deleteAllCompleted = (req, res) => {
+    const deleted = db.get('tasks')
+        .remove({ completed: true })
+        .write();
+    res.send({ deletedCount: deleted.length });
+};
+

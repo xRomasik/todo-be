@@ -1,0 +1,64 @@
+dialog {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: var(--radius-lg);
+  border: none;
+  max-width: 50rem;
+  box-shadow: var(--shadow-xl);
+  background: var(--bg-primary);
+
+  &::backdrop {
+    background-color: color-mix(in srgb, var(--primary), transparent 80%);
+  }
+}
+
+.modal {
+  padding: var(--spacing-xl);
+
+  .modal__content {
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: clamp(5rem, 35rem, 50rem);
+  }
+
+  .modal__form {
+    align-self: stretch;
+  }
+
+  .modal__header {
+    margin-bottom: 2rem;
+  }
+
+  .modal__title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .modal__input {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 0.2rem solid var(--border-light);
+    border-radius: var(--radius-md);
+    font-size: var(--font-base);
+    transition: border-color 0.2s;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+  }
+
+  .modal__actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: flex-end;
+    margin-top: 2rem;
+  }
+}

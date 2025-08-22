@@ -1,0 +1,62 @@
+.tasks__list {
+  list-style: none;
+}
+
+.task {
+  background: var(--bg-primary);
+  border: 0.1rem solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .task__content {
+    flex: 1;
+
+    .task__text {
+      font-size: var(--font-base);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .task__meta {
+      font-size: var(--font-xs);
+      color: var(--text-secondary);
+    }
+  }
+
+  .task__actions {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+
+  @media (max-width: 60rem) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .add-task {
+      flex-direction: column;
+    }
+
+    .task__actions {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.task--completed {
+  background: var(--gray-50);
+  opacity: 0.8;
+
+  .task__text {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+  }
+}

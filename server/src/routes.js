@@ -46,7 +46,11 @@ module.exports = (app) => {
      * @return {array<Task>} 200 - Successful response - application/json
      */
     app.route('/tasks/completed')
-        .get(controller.getCompleted);
+        .get(controller.getCompleted)
+        .delete(controller.deleteAllCompleted);
+
+    app.route('/tasks/complete-all')
+        .post(controller.completeAll);
 
     /**
      * POST /tasks/{id}

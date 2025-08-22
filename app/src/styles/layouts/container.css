@@ -1,0 +1,11 @@
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+
+  @media (max-width: 60rem) {
+    padding: var(--spacing-lg);
+  }
+}

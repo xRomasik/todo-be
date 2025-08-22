@@ -1,0 +1,31 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading-dots {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading__dots::after {
+  content: "...";
+  animation: loading-dots 1.5s infinite;
+}
+
+.spinning__icon {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
